@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Soporte TI Integral — Altecbol</title>
+<meta name="description" content="Presentación del servicio Soporte TI Integral de Altecbol: qué contempla, cómo funciona y qué se cotiza aparte." />
+<link rel="icon" href="https://web.altecbol.com.bo/images/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="bgfx"></div>
+<div class="progress" id="progress" style="width:0"></div>
+
+<!-- ============ ICONOS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-ar" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-al" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.86a10 10 0 0 1 14 0"/><path d="M8.5 16.43a5 5 0 0 1 7 0"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 14v-3a9 9 0 0 1 18 0v3"/><path d="M21 14a2 2 0 0 1-2 2h-1a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h1a2 2 0 0 1 2 2z"/><path d="M3 14a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H5a2 2 0 0 0-2 2z"/><path d="M21 16v1a4 4 0 0 1-4 4h-3"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M9 12h6"/><path d="M9 16h6"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+    <symbol id="i-router" viewBox="0 0 24 24"><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 18h.01"/><path d="M10 18h.01"/><path d="M15 10v4"/><path d="M17.84 7.17a4 4 0 0 0-5.66 0"/><path d="M20.66 4.34a8 8 0 0 0-11.31 0"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-5"/><path d="M12 8h.01"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ BARRA SUPERIOR ============ -->
+<header class="topbar">
+  <a class="logo" href="#s1">
+    <img src="https://web.altecbol.com.bo/images/logo-bn.png" alt="Altecbol"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+    <span class="logo-fb" style="display:none">ALTECBOL</span>
+    <span class="tag">Soporte TI Integral</span>
+  </a>
+  <div class="right">
+    <span>Portafolio 2026</span>
+    <span><b id="cur">01</b> / 18</span>
+  </div>
+</header>
+
+<main class="deck" id="deck">
+
+<!-- ================= 01 · PORTADA ================= -->
+<section class="slide cover active" id="s1">
+  <div class="heroimg">
+    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1700&q=75" alt="" onerror="this.parentNode.style.display='none'">
+  </div>
+  <div class="wrap">
+    <div class="brandmark">
+      <img src="https://web.altecbol.com.bo/images/icon.png" alt="Altecbol" onerror="this.style.display='none'">
+    </div>
+    <div class="eyebrow">Propuesta de servicio</div>
+    <h1>Soporte<br><span class="grad">TI Integral</span></h1>
+    <p class="lead">El departamento de sistemas de su empresa, completo y bajo un solo responsable.
+      Cubrimos a las personas, la red, los servidores y el correo, para que la operación no se detenga.</p>
+    <div class="pills">
+      <span class="pill cy"><span class="dot"></span>Plan mensual</span>
+      <span class="pill">Atención a usuarios</span>
+      <span class="pill">Red y servidores</span>
+      <span class="pill">Un solo interlocutor</span>
+    </div>
+    <div class="meta">
+      <span><b>Altecbol</b> · Servicios TI</span>
+      <span>web.altecbol.com.bo</span>
+      <span>Documento para clientes</span>
+    </div>
+    <div class="hint">← → navegar · F pantalla completa · P exportar a PDF</div>
+  </div>
+</section>
+
+<!-- ================= 02 · EL PUNTO DE PARTIDA ================= -->
+<section class="slide" id="s2">
+  <div class="wrap">
+    <div class="eyebrow">El punto de partida</div>
+    <h2>Cuando la tecnología no tiene<br><span class="grad">un responsable claro</span></h2>
+    <p class="lead">En muchas empresas el soporte está repartido entre personas y proveedores que no se hablan entre sí.
+      Cada uno resuelve su parte, pero nadie responde por el conjunto.</p>
+
+    <div class="g2" style="margin-top:26px">
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-users"/></svg></div>
+        <h3>Nadie responde por todo</h3>
+        <p>Cada falla tiene un culpable distinto: el proveedor de internet, el de las impresoras, el de las cámaras
+          o el técnico que viene cuando puede. Usted termina coordinando a todos.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-activity"/></svg></div>
+        <h3>Los problemas avisan tarde</h3>
+        <p>El disco se llena, el servidor se queda sin espacio, el enlace se degrada. Nadie lo ve hasta que la
+          operación ya se detuvo y el costo es mucho mayor.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-db"/></svg></div>
+        <h3>La información no está respaldada</h3>
+        <p>Se pierde una carpeta, se daña un disco y nadie sabe si existe una copia que realmente se pueda
+          recuperar. La información es el activo más valioso de su empresa.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-file"/></svg></div>
+        <h3>Facturas que no se explican</h3>
+        <p>Trabajos que no se aprobaron, horas que no se detallaron, servicios que nadie sabe qué incluyen.
+          Sin un alcance claro, el gasto tecnológico se vuelve impredecible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 · QUÉ ES ================= -->
+<section class="slide" id="s3">
+  <div class="wrap">
+    <div class="eyebrow">Qué es</div>
+    <h2>Soporte TI Integral</h2>
+    <p class="lead">Es nuestro plan mensual más completo: <strong>asumimos la operación tecnológica de su empresa
+      de principio a fin</strong>. Usted no contrata personal, no coordina proveedores y no persigue a nadie:
+      tiene un solo responsable.</p>
+
+    <div class="g3" style="margin-top:26px">
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-monitor"/></svg></div>
+        <h3>Personas</h3>
+        <p>Sus colaboradores tienen a quién llamar cuando la computadora, la impresora, el correo o un programa
+          dejan de funcionar.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-network"/></svg></div>
+        <h3>Red</h3>
+        <p>El firewall o router principal, los switches, el WiFi y los enlaces quedan bajo administración y
+          monitoreo permanente.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-server"/></svg></div>
+        <h3>Servidores</h3>
+        <p>Monitoreo, administración y atención de contingencias de los servidores que sostienen su operación.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-shield"/></svg>
+      <p><b>Funcionamos como su departamento de sistemas, sin que usted contrate personal.</b>
+        Ideal si quiere olvidarse del tema tecnológico y tener un solo responsable de todo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 · CÓMO SE VE ================= -->
+<section class="slide" id="s4">
+  <div class="wrap">
+    <div class="eyebrow">Cómo se ve en la práctica</div>
+    <h2>Un solo punto de contacto<br>para toda su operación</h2>
+    <p class="lead">Su equipo reporta por un solo canal. Nosotros clasificamos el caso, lo resolvemos y lo
+      documentamos. Usted recibe el resultado, no la coordinación.</p>
+
+    <div class="hubwrap">
+      <div class="sidebox">
+        <div class="hd">Su empresa</div>
+        <div class="row"><svg class="ic sm"><use href="#i-users"/></svg> Sus colaboradores</div>
+        <div class="row"><svg class="ic sm"><use href="#i-monitor"/></svg> Computadoras y laptops</div>
+        <div class="row"><svg class="ic sm"><use href="#i-printer"/></svg> Impresoras y periféricos</div>
+        <div class="row"><svg class="ic sm"><use href="#i-mail"/></svg> Correo y programas de oficina</div>
+      </div>
+
+      <div class="arrowcol"><svg class="ic"><use href="#i-ar"/></svg></div>
+
+      <div class="hub">
+        <img src="https://web.altecbol.com.bo/images/icon.png" alt="" onerror="this.style.display='none'">
+        <div class="nm">Soporte TI Integral</div>
+        <div class="sb">Altecbol</div>
+      </div>
+
+      <div class="arrowcol"><svg class="ic"><use href="#i-ar"/></svg></div>
+
+      <div class="sidebox">
+        <div class="hd">Lo que administramos</div>
+        <div class="row"><svg class="ic sm"><use href="#i-router"/></svg> Firewall y enlaces</div>
+        <div class="row"><svg class="ic sm"><use href="#i-wifi"/></svg> Red, switches, camaras, biométricos y WiFi</div>
+        <div class="row"><svg class="ic sm"><use href="#i-server"/></svg> Servidores</div>
+        <div class="row"><svg class="ic sm"><use href="#i-lock"/></svg> Accesos y seguridad</div>
+      </div>
+    </div>
+
+    <div class="note">
+      <svg class="ic sm"><use href="#i-check"/></svg>
+      <span>Un canal de contacto, un responsable y un reporte mensual. Sin cadena de proveedores.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 · SEIS FRENTES ================= -->
+<section class="slide" id="s5">
+  <div class="wrap">
+    <div class="eyebrow">Alcance del plan</div>
+    <h2>Los seis frentes que cubre</h2>
+    <p class="lead">Soporte TI Integral no es solo “arreglar computadoras”: es la operación tecnológica completa,
+      vista desde donde realmente se sostiene.</p>
+
+    <div class="g3" style="margin-top:24px">
+      <div class="card">
+        <div class="n">01</div>
+        <h3>Atención a usuarios</h3>
+        <p>Computadoras, laptops, impresoras, biométricos, biométricos, camaras, correo y programas de oficina. Soporte remoto y visitas
+          presenciales dentro del horario de atención.</p>
+      </div>
+      <div class="card">
+        <div class="n">02</div>
+        <h3>Red y conectividad</h3>
+        <p>Administración del firewall o router principal, switches, enlaces y WiFi. Revisión de políticas
+          de acceso y registros de seguridad.</p>
+      </div>
+      <div class="card">
+        <div class="n">03</div>
+        <h3>Servidores</h3>
+        <p>Monitoreo y administración de los servidores de su operación, con atención de contingencias y
+          recomendaciones para evitar que se repitan.</p>
+      </div>
+      <div class="card">
+        <div class="n">04</div>
+        <h3>Correo corporativo</h3>
+        <p>Administración de las cuentas de correo de su empresa: altas, bajas, accesos y configuración en
+          equipos y dispositivos móviles.</p>
+      </div>
+      <div class="card">
+        <div class="n">05</div>
+        <h3>Seguridad operativa</h3>
+        <p>Control de accesos, revisión de registros y buenas prácticas sobre los equipos y la red, para
+          reducir el riesgo de incidentes.</p>
+      </div>
+      <div class="card">
+        <div class="n">06</div>
+        <h3>Gestión y reporte</h3>
+        <p>Un solo interlocutor, prioridad de atención y un reporte mensual con lo atendido, el estado de la
+          infraestructura y las recomendaciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 · ATENCIÓN A USUARIOS ================= -->
+<section class="slide" id="s6">
+  <div class="wrap">
+    <div class="eyebrow">Frente 01</div>
+    <div class="split">
+      <div>
+        <h2>Atención a usuarios:<br><span class="grad">el mesón de ayuda</span></h2>
+        <p class="lead">El día a día de su gente: la computadora que no imprime, el correo que no sincroniza,
+          el programa que se cerró solo. Es la cara más visible del servicio.</p>
+
+        <div class="list" style="margin-top:20px">
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-headset"/></svg></div>
+            <div class="t"><b>Un canal único de contacto</b><span>Sus colaboradores reportan siempre al mismo lugar, sin buscar al “técnico de confianza”.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-monitor"/></svg></div>
+            <div class="t"><b>Remoto cuando alcanza, presencial cuando hace falta</b><span>Se resuelve a distancia lo que se puede y se va al equipo cuando el problema lo exige.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-clip"/></svg></div>
+            <div class="t"><b>Cada caso queda registrado</b><span>Qué se reportó, qué se hizo y cómo se cerró. Con seguimiento hasta la confirmación del usuario.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-users"/></svg></div>
+            <div class="t"><b>Orientación a la persona</b><span>No solo se repara el equipo: se explica qué pasó para que no vuelva a ocurrir.</span></div></div>
+        </div>
+      </div>
+
+      <div class="media">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1100&q=70" alt="" onerror="this.style.display='none'">
+        <svg class="ic wm"><use href="#i-headset"/></svg>
+        <div class="cap">
+          <div class="k">Impacto directo</div>
+          <p>Su gente deja de perder mañanas esperando a un técnico y vuelve a trabajar en el mismo día.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 · RED ================= -->
+<section class="slide" id="s7">
+  <div class="wrap">
+    <div class="eyebrow">Frente 02</div>
+    <div class="split">
+      <div class="media">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1100&q=70" alt="" onerror="this.style.display='none'">
+        <svg class="ic wm"><use href="#i-wifi"/></svg>
+        <div class="cap">
+          <div class="k">La base de todo</div>
+          <p>Cuando la red falla, falla todo: facturación, correo, cámaras y telefonía. Por eso se vigila de forma permanente.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Red y conectividad:<br><span class="grad">la base que sostiene</span></h2>
+        <p class="lead">La red es la que decide si su empresa trabaja o se detiene. No se trata solo del internet:
+          es el firewall, los switches, el WiFi y cada enlace que conecta sus áreas.</p>
+
+        <div class="list" style="margin-top:20px">
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-router"/></svg></div>
+            <div class="t"><b>Administración del firewall o router principal</b><span>Configuración, reglas y control del tráfico de entrada y salida.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-wifi"/></svg></div>
+            <div class="t"><b>Monitoreo de switches, enlaces y WiFi</b><span>Se detectan caídas, saturación y equipos degradados antes de que afecten a los usuarios.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-lock"/></svg></div>
+            <div class="t"><b>Políticas de acceso y registros de seguridad</b><span>Quién entra, desde dónde y con qué permisos. Con evidencia para revisar.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-alert"/></svg></div>
+            <div class="t"><b>Atención de contingencias</b><span>Cortes, lentitud y caídas de enlace, atendidos con prioridad dentro del plan.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-file"/></svg></div>
+            <div class="t"><b>Informe del estado de la infraestructura</b><span>Un documento periódico con el estado de la red y los puntos a mejorar.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 · SERVIDORES ================= -->
+<section class="slide" id="s8">
+  <div class="wrap">
+    <div class="eyebrow">Frente 03</div>
+    <div class="split">
+      <div>
+        <h2>Servidores:<br><span class="grad">monitoreo, administración y respuesta</span></h2>
+        <p class="lead">El servidor guarda la información y sostiene los sistemas. Un servidor sin supervisión no
+          avisa: se llena, se degrada y un día simplemente deja de responder.</p>
+
+        <div class="list" style="margin-top:20px">
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-activity"/></svg></div>
+            <div class="t"><b>Monitoreo del estado del servidor</b><span>Espacio, memoria, servicios y disponibilidad, revisados de forma continua.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-lock"/></svg></div>
+            <div class="t"><b>Administración de accesos y permisos</b><span>Quién puede ver qué carpeta y con qué nivel de permiso.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-server"/></svg></div>
+            <div class="t"><b>Atención de contingencias</b><span>Servicios caídos, carpetas que no abren, accesos que dejaron de funcionar.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-shield"/></svg></div>
+            <div class="t"><b>Recomendaciones de mejora</b><span>Qué conviene corregir para que el mismo problema no se repita.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-users"/></svg></div>
+            <div class="t"><b>Coordinación con terceros</b><span>Si el sistema o el hosting lo provee otra empresa, hablamos con ellos por usted.</span></div></div>
+        </div>
+      </div>
+
+      <div class="media">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1100&q=70&sat=-100" alt="" onerror="this.style.display='none'">
+        <svg class="ic wm"><use href="#i-server"/></svg>
+        <div class="cap">
+          <div class="k">Riesgo real</div>
+          <p>Un disco lleno o un servicio detenido puede parar la facturación de toda una semana.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 09 · CORREO Y SEGURIDAD ================= -->
+<section class="slide" id="s9">
+  <div class="wrap">
+    <div class="eyebrow">Frentes 04 y 05</div>
+    <div class="split">
+      <div class="media">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1100&q=70" alt="" onerror="this.style.display='none'">
+        <svg class="ic wm"><use href="#i-shield"/></svg>
+        <div class="cap">
+          <div class="k">Prevención</div>
+          <p>El correo es la puerta de entrada más común a un incidente. Administrarlo bien es prevención, no trámite.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Correo y seguridad:<br><span class="grad">el control diario</span></h2>
+        <p class="lead">Las cuentas de correo son la identidad de su empresa hacia afuera y el principal vector de
+          ataques. Se administran, se revisan y se protegen dentro del plan.</p>
+
+        <div class="list" style="margin-top:20px">
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-mail"/></svg></div>
+            <div class="t"><b>Administración de cuentas de correo</b><span>Altas, bajas, recuperación de accesos y configuración en equipos y celulares.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-lock"/></svg></div>
+            <div class="t"><b>Revisión de políticas de acceso</b><span>Contraseñas, permisos y dispositivos autorizados.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-file"/></svg></div>
+            <div class="t"><b>Revisión de registros de seguridad</b><span>Intentos de acceso, cuentas comprometidas y envíos no autorizados.</span></div></div>
+          <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-shield"/></svg></div>
+            <div class="t"><b>Buenas prácticas</b><span>Uso de los equipos, respaldos y manejo de información sensible.</span></div></div>
+          <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-plus"/></svg></div>
+            <div class="t"><b>Antivirus corporativo, como complemento</b><span>Trabajamos con Kaspersky o WatchGuard, según lo que mejor se adapte a su operación.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 · MODELO DE GESTIÓN ================= -->
+<section class="slide" id="s10">
+  <div class="wrap">
+    <div class="eyebrow">Cómo se gestiona</div>
+    <h2>Un solo interlocutor,<br><span class="grad">un solo reporte</span></h2>
+    <p class="lead">La diferencia entre un proveedor y un departamento de sistemas es la gestión: alguien que
+      responde, que informa y que decide con usted.</p>
+
+    <div class="g2" style="margin-top:26px">
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-zap"/></svg></div>
+        <h3>Prioridad de atención</h3>
+        <p>Los casos de Soporte TI Integral se atienden con prioridad frente a los servicios a demanda.
+          Cuando algo se detiene, su empresa va primero.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-file"/></svg></div>
+        <h3>Reporte mensual</h3>
+        <p>Un documento claro: casos atendidos, estado de la red y los servidores, riesgos detectados y
+          recomendaciones concretas para el siguiente periodo.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-shield"/></svg></div>
+        <h3>Aprobación previa</h3>
+        <p>Todo lo que está fuera del plan se cotiza y se aprueba antes de ejecutarse. Nada se hace sin su
+          autorización, y nada aparece sin explicación en la factura.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-clip"/></svg></div>
+        <h3>Documentación</h3>
+        <p>La configuración de su red, sus equipos y sus accesos queda registrada. Si mañana cambia un
+          proveedor o entra alguien nuevo, la información está.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-clock"/></svg>
+      <p><b>Sin sorpresas.</b> La mensualidad cubre el plan. Cualquier adicional se consulta primero y se
+        ejecuta solo con su aprobación.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 · FLUJO DE UN CASO ================= -->
+<section class="slide" id="s11">
+  <div class="wrap">
+    <div class="eyebrow">Operación</div>
+    <h2>Cómo se atiende un caso,<br><span class="grad">paso a paso</span></h2>
+    <p class="lead">El mismo proceso para todas las atenciones. Simple para su gente, ordenado por dentro.</p>
+
+    <div class="steps">
+      <div class="step">
+        <span class="dot"></span>
+        <div class="k">Paso 01</div>
+        <h3>Reporte</h3>
+        <p>Su colaborador escribe o llama. No necesita explicar el problema en términos técnicos.</p>
+      </div>
+      <div class="step">
+        <span class="dot"></span>
+        <div class="k">Paso 02</div>
+        <h3>Registro y clasificación</h3>
+        <p>Abrimos el caso, definimos la prioridad y verificamos si está dentro del plan.</p>
+      </div>
+      <div class="step">
+        <span class="dot"></span>
+        <div class="k">Paso 03</div>
+        <h3>Atención</h3>
+        <p>Se resuelve de forma remota o con visita presencial, según lo que requiera el problema.</p>
+      </div>
+      <div class="step">
+        <span class="dot"></span>
+        <div class="k">Paso 04</div>
+        <h3>Solución y prueba</h3>
+        <p>No se cierra hasta confirmar con el usuario que el problema quedó realmente resuelto.</p>
+      </div>
+      <div class="step">
+        <span class="dot"></span>
+        <div class="k">Paso 05</div>
+        <h3>Cierre y reporte</h3>
+        <p>El caso queda documentado y se refleja en el reporte mensual de la cuenta.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-info"/></svg>
+      <p><b>Si el trabajo requiere algo fuera del plan</b>, se detiene, se cotiza y se aprueba antes de
+        continuar. Su operación nunca recibe una factura por sorpresa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 12 · QUÉ INCLUYE ================= -->
+<section class="slide" id="s12">
+  <div class="wrap">
+    <div class="eyebrow">Alcance cerrado</div>
+    <h2>Qué incluye <span class="grad">Soporte TI Integral</span></h2>
+    <p class="lead">Esto es lo que queda cubierto por la mensualidad, sin costo adicional y sin pasos previos.</p>
+
+    <div class="g2" style="margin-top:24px">
+      <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-check"/></svg></div>
+        <div class="t"><b>Atención a usuarios</b><span>Computadoras, laptops, impresoras, camaras, biométricos, correo y programas de oficina.</span></div></div>
+      <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-check"/></svg></div>
+        <div class="t"><b>Firewall o router principal incluido</b><span>Administrado dentro del plan, no como servicio aparte.</span></div></div>
+      <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-check"/></svg></div>
+        <div class="t"><b>Monitoreo de red y servidores</b><span>Vigilancia del estado de la infraestructura que sostiene la operación.</span></div></div>
+      <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-check"/></svg></div>
+        <div class="t"><b>Administración de cuentas de correo</b><span>Altas, bajas, accesos y configuración.</span></div></div>
+      <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-check"/></svg></div>
+        <div class="t"><b>Un solo interlocutor y un solo reporte mensual</b><span>Una persona responsable y un documento claro cada mes.</span></div></div>
+      <div class="li"><div class="ico"><svg class="ic sm"><use href="#i-check"/></svg></div>
+        <div class="t"><b>Prioridad de atención</b><span>Sus casos van antes que los servicios a demanda.</span></div></div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-shield"/></svg>
+      <p><b>Cobertura real, no promesas.</b> Todo lo que está en esta lista se atiende sin cotización previa.
+        Lo que no está, se cotiza y se aprueba con usted.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 13 · SE COTIZA APARTE ================= -->
+<section class="slide" id="s13">
+  <div class="wrap">
+    <div class="eyebrow">Lo que se suma</div>
+    <h2>Qué se cotiza <span class="grad">aparte</span></h2>
+    <p class="lead">El plan crece con su empresa. Estos elementos se agregan a la mensualidad o se cotizan
+      como proyecto, siempre con su aprobación previa.</p>
+
+    <div class="g2" style="margin-top:24px">
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-users"/></svg></div>
+        <div class="t"><b>Usuario adicional</b><span>Cuando se suman colaboradores a la operación cubierta.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-server"/></svg></div>
+        <div class="t"><b>Servidor crítico</b><span>Equipos de alta criticidad para la continuidad del negocio.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-db"/></svg></div>
+        <div class="t"><b>Servidor simple o máquina virtual</b><span>Servidores de menor criticidad o ambientes de prueba.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-network"/></svg></div>
+        <div class="t"><b>Sede adicional</b><span>Cada local con su propia red, sus equipos y su operación.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-mail"/></svg></div>
+        <div class="t"><b>Cuenta de correo adicional</b><span>Altas que superan lo previsto en el plan.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-wrench"/></svg></div>
+        <div class="t"><b>Instalaciones, cableado y equipos nuevos</b><span>Van como proyecto, con alcance cerrado y aprobado.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-lock"/></svg></div>
+        <div class="t"><b>Licencias, repuestos y hardware</b><span>Se cotizan por separado y se aprueban antes de comprar.</span></div></div>
+      <div class="li"><div class="ico gold"><svg class="ic sm"><use href="#i-plus"/></svg></div>
+        <div class="t"><b>Cualquier trabajo fuera de alcance</b><span>Se consulta primero. Nunca se ejecuta sin su autorización.</span></div></div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-alert"/></svg>
+      <p><b>La regla es simple:</b> lo que está en el plan, se atiende. Lo que no está, se cotiza y se aprueba
+        antes de hacerlo. Así usted siempre sabe cuánto va a pagar y por qué.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 14 · COMPARATIVA ================= -->
+<section class="slide" id="s14">
+  <div class="wrap">
+    <div class="eyebrow">Dónde encaja</div>
+    <h2>Los planes mensuales, <span class="grad">lado a lado</span></h2>
+    <p class="lead">Tenemos tres formas de cubrir la operación. Soporte TI Integral es la más completa:
+      reúne lo que los otros dos planes cubren por separado.</p>
+
+    <div class="tbl">
+      <div class="trow th">
+        <div class="c">Cobertura</div>
+        <div class="c">Helpdesk</div>
+        <div class="c">Infraestructura</div>
+        <div class="c">TI Integral</div>
+      </div>
+      <div class="trow">
+        <div class="c">Atención a usuarios</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+        <div class="c no">—</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+      <div class="trow">
+        <div class="c">Red, firewall y WiFi</div>
+        <div class="c mid">Aparte</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+      <div class="trow">
+        <div class="c">Servidores</div>
+        <div class="c mid">Aparte</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+      <div class="trow">
+        <div class="c">Administración de correo</div>
+        <div class="c no">—</div>
+        <div class="c no">—</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+      <div class="trow">
+        <div class="c">Informe periódico</div>
+        <div class="c no">—</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+      <div class="trow">
+        <div class="c">Prioridad de atención</div>
+        <div class="c no">—</div>
+        <div class="c no">—</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+      <div class="trow">
+        <div class="c">Un solo interlocutor</div>
+        <div class="c no">—</div>
+        <div class="c no">—</div>
+        <div class="c hi"><span class="tick"><svg class="ic sm"><use href="#i-check"/></svg>Incluido</span></div>
+      </div>
+    </div>
+
+    <div class="note">
+      <svg class="ic sm"><use href="#i-plus"/></svg>
+      <span>¿Tiene una cadena con locales pequeños y parecidos? Existe <b>Soporte por sucursal</b>: cobertura
+        fija por cada local, con un técnico disponible en horario de atención.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 15 · COMPLEMENTOS ================= -->
+<section class="slide" id="s15">
+  <div class="wrap">
+    <div class="eyebrow">Se puede ampliar</div>
+    <h2>Todo lo demás, <span class="grad">con el mismo proveedor</span></h2>
+    <p class="lead">Soporte TI Integral resuelve la operación diaria. Cuando la empresa necesita más, el resto
+      del portafolio se suma sin cambiar de proveedor ni de interlocutor.</p>
+
+    <div class="g3" style="margin-top:24px">
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-cloud"/></svg></div>
+        <h3>Continuidad y respaldo</h3>
+        <p>Backup en la nube con verificación y restauración, y mantenimiento mensual de los sistemas que
+          ya le entregamos.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-headset"/></svg></div>
+        <h3>Soporte para Call Center</h3>
+        <p>Atención especializada para su central de llamadas, con cobertura según el tamaño de su operación.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-network"/></svg></div>
+        <h3>Proyectos de infraestructura</h3>
+        <p>Redes, cableado, racks, cámaras, telefonía IP y conectividad. Alcance cerrado y garantía incluida.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-code"/></svg></div>
+        <h3>Software a medida</h3>
+        <p>Sistemas propios, aplicaciones móviles y páginas web, con soporte y mantenimiento posterior.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-server"/></svg></div>
+        <h3>Servidores en la nube</h3>
+        <p>VPS Linux y Windows para alojar sistemas, aplicaciones y bases de datos sin comprar hardware.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-shield"/></svg></div>
+        <h3>Licencias y seguridad</h3>
+        <p>Antivirus corporativo Kaspersky o WatchGuard, Microsoft 365 y almacenamiento en la nube.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-check"/></svg>
+      <p><b>Un portafolio completo detrás del plan.</b> Cuatro áreas y dieciséis líneas de servicio: si su
+        empresa crece, no hay que buscar otro proveedor.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 16 · POR QUÉ ALTECBOL ================= -->
+<section class="slide" id="s16">
+  <div class="wrap">
+    <div class="eyebrow">Por qué con Altecbol</div>
+    <h2>Lo que cambia <span class="grad">en el día a día</span></h2>
+    <p class="lead">No se trata solo de resolver fallas: se trata de que la tecnología deje de ser un problema
+      para usted y pase a ser una herramienta.</p>
+
+    <div class="g2" style="margin-top:26px">
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-clip"/></svg></div>
+        <h3>Alcance cerrado</h3>
+        <p>Cada trabajo se define, se aprueba y se entrega. Sin horas que aparecen al final ni servicios
+          que nadie sabía que estaban cobrando.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-users"/></svg></div>
+        <h3>Trato directo</h3>
+        <p>Usted habla con la persona que resuelve, no con un conmutador. Un interlocutor que conoce su
+          empresa y su infraestructura.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-file"/></svg></div>
+        <h3>Todo documentado</h3>
+        <p>Su red, sus equipos, sus accesos y cada atención quedan registrados. La información no se va con
+          la persona que se fue.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-shield"/></svg></div>
+        <h3>Un proveedor, no cinco</h3>
+        <p>Red, servidores, correo, respaldo, cámaras y telefonía bajo la misma responsabilidad. Menos
+          llamadas y menos culpas repartidas.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <svg class="ic lg"><use href="#i-activity"/></svg>
+      <p><b>La tecnología deja de ser un gasto impredecible</b> y pasa a ser un servicio con alcance,
+        responsable y resultados medibles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 17 · PREGUNTAS FRECUENTES ================= -->
+<section class="slide" id="s17">
+  <div class="wrap">
+    <div class="eyebrow">Antes de decidir</div>
+    <h2>Preguntas que <span class="grad">suelen hacernos</span></h2>
+
+    <div class="faq">
+      <details open>
+        <summary>¿Reemplaza a mi personal de sistemas?</summary>
+        <p>No necesariamente. Muchas empresas tienen a alguien para el día a día; el plan cubre justamente
+          lo que esa persona no alcanza: red, servidores, seguridad y respaldo.</p>
+      </details>
+      <details>
+        <summary>¿Puedo empezar solo con atención a usuarios?</summary>
+        <p>Sí. Puede iniciar con el plan Helpdesk y sumar la administración de red y servidores cuando lo
+          necesite, sin cambiar de proveedor.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa si tengo un servidor propio o un sistema en la nube?</summary>
+        <p>Se administra y se monitorea igual. Si el sistema lo provee un tercero, coordinamos con ese
+          proveedor y le informamos a usted el resultado.</p>
+      </details>
+      <details>
+        <summary>¿Puedo sumar sucursales?</summary>
+        <p>Sí. Cada sede se agrega al plan como adicional, o se cubre con el plan de Soporte por sucursal
+          cuando se trata de locales pequeños y parecidos.</p>
+      </details>
+      <details>
+        <summary>¿Cómo se manejan los trabajos fuera del plan?</summary>
+        <p>Se cotizan y se aprueban antes de ejecutarse. Usted decide siempre antes de que se haga
+          cualquier trabajo adicional.</p>
+      </details>
+      <details>
+        <summary>¿Hay contrato mínimo?</summary>
+        <p>Sí. El plan mensual se trabaja con contrato, para que ambas partes tengan previsibilidad y el
+          servicio pueda sostenerse en el tiempo.</p>
+      </details>
+    </div>
+
+    <div class="note">
+      <svg class="ic sm"><use href="#i-info"/></svg>
+      <span>¿Tiene una pregunta distinta? La respondemos con su caso concreto, sin compromiso.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 18 · CIERRE ================= -->
+<section class="slide closing" id="s18">
+  <div class="wrap">
+    <div class="eyebrow">Siguiente paso</div>
+    <h1>Empecemos por<br><span class="grad">un diagnóstico</span></h1>
+    <p class="lead">Revisamos su red, sus servidores, sus equipos y la forma en que hoy se atienden los
+      problemas. Con eso armamos una propuesta con alcance claro y un plan de arranque.</p>
+
+    <div class="steps3">
+      <div class="card">
+        <div class="n">01</div>
+        <h3>Diagnóstico inicial</h3>
+        <p>Levantamos el estado real de la infraestructura y de la operación actual.</p>
+      </div>
+      <div class="card">
+        <div class="n">02</div>
+        <h3>Propuesta con alcance</h3>
+        <p>Definimos qué cubre el plan, qué se cotiza aparte y cómo se mide el servicio.</p>
+      </div>
+      <div class="card">
+        <div class="n">03</div>
+        <h3>Arranque y traspaso</h3>
+        <p>Documentamos, ordenamos accesos y empezamos a operar con reporte mensual.</p>
+      </div>
+    </div>
+
+    <div class="band" style="margin-top:30px">
+      <svg class="ic lg"><use href="#i-shield"/></svg>
+      <p><b>Altecbol · Servicios TI</b> — Soporte TI Integral. Un solo responsable para la tecnología de su
+        empresa. <span style="color:#8FA0B6">web.altecbol.com.bo</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ NAVEGACIÓN ============ -->
+<nav class="nav">
+  <div class="segs" id="segs"></div>
+  <div class="navright">
+    <span class="counter"><b id="cur2">01</b> / 18</span>
+    <button class="navbtn" id="prev" aria-label="Anterior"><svg class="ic"><use href="#i-al"/></svg></button>
+    <button class="navbtn" id="next" aria-label="Siguiente"><svg class="ic"><use href="#i-ar"/></svg></button>
+  </div>
+</nav>
+
+<script src="deck.js"></script>
+</body>
+</html>
